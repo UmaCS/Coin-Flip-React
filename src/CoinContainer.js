@@ -28,7 +28,7 @@ class CoinContainer extends Component {
                 currCoin: newCoin, 
                 nFlips: st.nFlips + 1,
                 nHeads: st.nHeads + (newCoin.side === 'heads' ? 1 : 0),
-                nTails: st.nHeads + (newCoin.side === 'tails' ? 1 : 0)
+                nTails: st.nTails + (newCoin.side === 'tails' ? 1 : 0)
             };
         });
         
@@ -43,7 +43,9 @@ class CoinContainer extends Component {
                 <h1>Let's flip a coin!</h1>
                 {this.state.currCoin && <Coin info={this.state.currCoin} />}
                 <button onClick={this.handleClick}>Flip me</button>
-                <p>{`Out of ${this.state.nFlips} flips, there have been ${this.state.nHeads} heads and ${this.state.nTails} tails.`}</p>
+                <h3>{`Out of ${this.state.nFlips} flips, there have been ${this.state.nHeads} heads and ${this.state.nTails} tails.`}</h3>
+                <br/>
+                {this.state.currCoin && <p>This coin is called "1 tiyn" in my homecountry(Uzbekistan), it is like a US penny</p>}
             </div>
         );
     }
